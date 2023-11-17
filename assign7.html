@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+</head>
+
+<body style="text-align: center;">
+<h1>Sanika Gaikwad<br> 42120 </h1>
+<hr>
+
+<h1>Append Objects</h1>
+
+Enter object : <input id="obj" name="obj">
+
+<p><button onclick="append()"> Append object </button></p>
+<p><button onclick="isPresent()"> Is Element Present</button></p>
+<p id="ans"> </p>
+
+
+<script>
+var arr = []; function append() {
+var target = document.getElementById("obj").value; arr.push(target); document.getElementById("ans").innerHTML = arr;
+}
+
+function isPresent() {
+var target = document.getElementById("obj").value; var flag = false;
+for (var i = 0; i < arr.length; i++) { if (arr[i] == target) {
+flag = true; break;
+}
+}
+document.getElementById("ans").innerHTML = flag;
+}
+
+</script>
+
+</body>
+
+</html>

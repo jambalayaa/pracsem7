@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<head>
+    <title>expt 3 prac</title>
+</head>
+<body>
+    <h3>Reverse a string</h3>
+    <br><br>
+    <label>Enter a string</label>
+    <input id="str1" type="text" placeholder="enter something">
+    <button onclick="rever()">Reverse!</button>
+    <p> Reversed string:   
+        <span id="resr"></span>
+    </p>
+    <h3>Palindrome check</h3>
+    <br><br>
+    <label>Enter a string</label>
+    <input id="str2" type="text" placeholder="enter something">
+    <button onclick="pali()">Check!</button>
+    <p>
+        <span id="resp"></span>
+    </p>
+    <h3>Replace char</h3>
+    <br><br>
+    <label>Enter a string</label>
+    <input id="str3" type="text" placeholder="enter something"><br>
+    <label>Enter char to be replaced</label>
+    <input id="c1" type="text" placeholder="enter something"><br>
+    <label>Enter char that replaces</label>
+    <input id="c2" type="text" placeholder="enter something"><br>
+    <button onclick="rep()">Replace!</button>
+    <p>
+        <span id="res"></span>
+    </p>
+    <script>
+        function rever()
+        {
+            let f="";
+            let i=document.getElementById("str1").value;
+            for( let j=i.length-1;j>=0;j--)
+            {
+                f+=i[j];
+            }
+            document.getElementById("resr").innerHTML=f;
+        }
+        function pali()
+        {
+            let f="";
+            var c;
+            let i=document.getElementById("str2").value;
+            for( let j=i.length-1;j>=0;j--)
+            {
+                f+=i[j];
+            }
+            if(f == i)
+            {
+                document.getElementById("resp").innerHTML="String is Palindrome";
+            }
+            else
+            {
+                document.getElementById("resp").innerHTML="String is not Palindrome";
+            }
+            
+        }
+        function rep()
+        {
+            let f="";
+            let st=document.getElementById("str3").value;
+            let a=document.getElementById("c1").value;
+            let b=document.getElementById("c2").value;
+            f+=st.replace(a,b);
+            document.getElementById("res").innerHTML=f;
+        }
+    </script>
+</body>

@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <title>expt 1 prac</title>
+    </head>
+    <body>
+        <center><h3>area of rectangle</h3>
+        <label>side 1</label>
+        <input id="sa" type="number"/><br>
+        <br>
+        <label>side 2</label>
+        <input id="sb" type="number"/><br>
+        <br>
+        <button onclick="area1()">calculate</button>
+        <h4 id="ar"></h4>
+        <hr>
+        <h3>area of circle</h3>
+        <label>radius</label>
+        <input id="ra" type="number"/>
+        <button onclick="area2()">calculate</button>
+        <h4 id="ara"></h4>
+        <hr>
+        <h3>area of triangle</h3>
+        <label>side 1</label>
+        <input id="ta" type="number"/><br>
+        <br>
+        <label>side 2</label>
+        <input id="tb" type="number"/><br>
+        <br>
+        <label>side 3</label>
+        <input id="tc" type="number"/><br>
+        <br>
+        <button onclick="area3()">calculate</button>
+        <h4 id="art"></h4>
+    </center>
+        <script>
+            function area1(){
+            var s1=parseInt(document.getElementById("sa").value);
+            var s2=parseInt(document.getElementById("sb").value);
+            var are=s1*s2;
+            document.getElementById("ar").innerHTML=are;
+            }
+            function area2(){
+            var r=parseInt(document.getElementById("ra").value);
+            var ar=r*r*3.14;
+            document.getElementById("ara").innerHTML=ar;
+            }
+            function area3(){
+            var t1=parseFloat(document.getElementById("ta").value);
+            var t2=parseFloat(document.getElementById("tb").value);
+            var t3=parseFloat(document.getElementById("tc").value);
+            var s=(ta+tb+tc)/2;
+            var ar=Math.sqrt(s*((s-ta)*(s-tb)*(s-tc))); 
+            document.getElementById("art").innerHTML=ar;
+            }
+        </script>
+    </body>
+</html>

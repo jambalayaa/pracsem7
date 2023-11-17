@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<head>expt 2 prac</head>
+<body>
+    <h1>multplication table</h1>
+    <label>Number:</label>
+    <input type="number" id="num1" placeholder="enter a num">
+    <br><br>
+    <button onclick="multf()">for loop</button>
+    <p>table is:<br><span id="resf"></p>
+    <hr>
+    <br><br>
+    <button onclick="multw()">while loop</button>
+    <p>table is:<br><span id="resw"></p>
+    <hr>
+    <br><br>
+    <button onclick="multd()">do while loop</button>
+    <p>table is:<br><span id="resd"></p>
+        <script>
+            function multf()
+            {
+                num=parseInt(document.getElementById("num1").value);
+                res="";
+                for(let i=1;i<=10;i++)
+                {
+                    f=num*i;
+                    res+=num+"x"+i+"="+f+"<br>";
+                }
+                document.getElementById("resf").innerHTML=res;
+            }
+            function multw()
+            {
+                num=parseInt(document.getElementById("num1").value);
+                res="";
+                let i=1;
+                while(i<=10)
+                {
+                    f=num*i;
+                    res+=num+"x"+i+"="+f+"<br>";
+                    i++;
+                }
+                document.getElementById("resw").innerHTML=res;
+            }
+            function multd()
+            {
+                num=parseInt(document.getElementById("num1").value);
+                res="";
+                let i=1;
+                do
+                {
+                    f=num*i;
+                    res+=num+"x"+i+"="+f+"<br>";
+                    i++;
+                }while(i<=10)
+                document.getElementById("resd").innerHTML=res;
+            }
+        </script>
+</body>

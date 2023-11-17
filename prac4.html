@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+    <title>expt 4 prac</title>
+</head>
+<body>
+    <h1>string comparison</h1><br><br>
+    <label>string 1</label>
+    <input id="s1" type="text" placeholder="enter string"><br>
+    <label>string 2</label>
+    <input id="s2" type="text" placeholder="enter string"><br><br>
+    <button onclick="comparee()">Compare!</button>
+    <br><br><br>
+    <p>Result using upcase():   <h4 id="r1"></h4>    </p>
+    <br><br>
+    <p>Result using regex:   <span id="r2"></span></p>
+    <br><br>
+    <p>Result using localcompare:   <span id="r3"></span></p>
+    <br><br>
+    <p>Result using strict eq:   <span id="r4"></span></p>
+    <script>
+        var p;
+        var q;
+        var r;
+        var s;
+        function comparee()
+        {
+            var a=document.getElementById("s1").value;
+            var b=document.getElementById("s2").value;
+            com1(a,b);
+            com2(a,b);
+            com3(a,b);
+            com4(a,b);
+        }
+        function com1(st1,st2)
+        {
+            
+            if(st1.toUppercase()===st2.toUppercase())
+            {
+                p="Strings are similar";
+            }
+            else
+            {
+                p="Strings are not similar";
+            }
+            document.getElementById("r1").innerHTML=p;
+        }
+        function com2(st1,st2)
+        {
+            
+            const pat=new RegExp(st1,"gi");
+            if(pat.test(st2))
+            {
+                q="Strings are similar";
+            }
+            else{
+                q="Strings are  not similar";
+            }
+            document.getElementById("r2").innerHTML=q;
+        }
+        function com3(st1,st2)
+        {
+            
+            if(st1.localeCompare(st2, undefined,{sensitivity:'base'}))
+            {
+                r="Strings are similar";
+            }
+            else{
+                r="Strings are  not similar";
+            }
+            document.getElementById("r3").innerHTML=r;
+        }
+        function com4(st1,st2)
+        {
+                     
+            if(st1===st2)
+            {
+                s="Strings are similar";
+            }
+            else
+            {
+                s="Strings are not similar";
+            }        
+            document.getElementById("r4").innerHTML=s;
+        }
+    </script>
+
+</body>
+</html>
